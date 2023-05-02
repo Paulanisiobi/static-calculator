@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   deploy:
-    runs-on: paulanisiobi-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy Via SSH
         uses: appleboy/ssh-action@master
@@ -14,7 +14,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/paulanisiobi/static-calculator
+            cd /home/ubuntu/static-calculator
             sudo git pull origin master
             echo "Done"
 
